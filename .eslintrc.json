@@ -1,0 +1,69 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": [
+    "plugin:react/recommended",
+    "airbnb",
+    "plugin:@typescript-eslint/recommended",
+    "prettier",
+    "plugin:@next/next/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true,
+      "ts":true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["react", "@typescript-eslint", "prettier", "import"],
+  "settings": {
+    "import/extensions": [".js", ".jsx", ".ts", ".tsx"],
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/resolver": {
+      "typescript": {
+        "directory": "./tsconfig.json"
+      },
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      },
+      "project": ["path/to/folder","packages/*/tsconfig.json",[
+        "packages/module-a/tsconfig.json",
+        "packages/module-b/tsconfig.json"
+      ],[
+        "packages/*/tsconfig.json",
+        "other-packages/*/tsconfig.json"
+      ]
+    ]
+    }
+  },
+  "rules": {
+    "import/no-unresolved": "error",
+    "prettier/prettier":"error",
+    "space-before-function-paren": "off",
+    "react/prop-types": "off",
+    "@typescript-eslint/indent": [2, 2],
+    "no-console": "off",
+    "import/named": 2,
+    "import/namespace": 2,
+    "import/default": 2,
+    "import/export": 2,
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+   ],
+   "react/jsx-filename-extension": "off"
+  }
+}
