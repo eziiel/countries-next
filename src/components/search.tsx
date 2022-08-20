@@ -28,11 +28,6 @@ function Search() {
       : (router.query.country = countries)
   }
 
-  React.useEffect(() => {
-    // eslint-disable-next-line no-unused-expressions
-    countries.trim().length === 0 && router.push("/")
-  }, [countries])
-
   return (
     <S.Section>
       <S.SubSection>

@@ -13,7 +13,7 @@ interface Props {
 function CardCountry({ name, capital, flag, population, region }: Props) {
   return (
     <S.Card>
-      <Image src={flag} alt={flag} width={300} height={200} />
+      <Image src={flag} alt={flag} width={300} priority height={200} />
       <S.InfoData>
         <S.Info name={name}>
           <S.SpanAnswer>{name}</S.SpanAnswer>
