@@ -1,7 +1,7 @@
 import React from "react"
 import { GetStaticProps } from "next"
 import * as S from "../styles/pages/home"
-import Country from "../components/country"
+import CardCountry from "../components/country"
 
 function Countries({ data }) {
   return (
@@ -9,7 +9,7 @@ function Countries({ data }) {
     <S.HomeMain>
       <S.HomeUl>
         {data.map(({ name, capital, region, population, flag }) => (
-          <Country
+          <CardCountry
             key={name}
             name={name}
             capital={capital}

@@ -10,7 +10,7 @@ interface Props {
   region: string;
 }
 
-function Country({ name, capital, flag, population, region }: Props) {
+function CardCountry({ name, capital, flag, population, region }: Props) {
   return (
     <S.Card>
       <Image src={flag} alt={flag} width={300} height={200} />
@@ -35,4 +35,4 @@ function Country({ name, capital, flag, population, region }: Props) {
   )
 }
 
-export default Country
+export default CardCountry

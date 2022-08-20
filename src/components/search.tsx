@@ -13,20 +13,34 @@ function Search() {
 
   const handleForm = (e: React.FormEvent) => {
     e.preventDefault()
-    const regexp = /[a-z]/gi
-    const res = countries.match(regexp)
 
     // eslint-disable-next-line no-unused-expressions
+    if (countries.trim().length === 0) {
+      router.push("/")
+      return
+    }
+    const regexp = /[a-z]/gi
+    const res = countries.match(regexp)
+    setCountries(res.join("").trim())
+    // eslint-disable-next-line no-unused-expressions
     router.query
-      ? router.push(`/countriesInfo/${res.join("").trim()}`)
+      ? router.push(`/countriesInfo/${countries}`)
       : (router.query.country = countries)
   }
+
+  React.useEffect(() => {
+    // eslint-disable-next-line no-unused-expressions
+    countries.trim().length === 0 && router.push("/")
+  }, [countries])
 
   return (
     <S.Section>
       <S.SubSection>
         <S.FormCountry onSubmit={e => handleForm(e)}>
-          <S.SearchName onChange={value => handleCountry(value.target.value)} />
+          <S.SearchName
+            value={countries}
+            onChange={value => handleCountry(value.target.value)}
+          />
         </S.FormCountry>
       </S.SubSection>
     </S.Section>

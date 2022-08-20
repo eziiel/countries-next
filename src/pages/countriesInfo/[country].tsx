@@ -1,31 +1,31 @@
 import { GetStaticPaths, GetStaticProps } from "next"
 import { useRouter } from "next/router"
 import React from "react"
-import { ContextData } from "../../../context"
+import CardCountry from "../../components/country"
+import * as S from "../../styles/pages/country"
 
 export default function Country({ data }) {
-  const { countries } = React.useContext(ContextData)
-
   const router = useRouter()
 
   if (router.isFallback) {
     return <h1>carregando...</h1>
   }
 
-  React.useEffect(() => {
-    // eslint-disable-next-line no-unused-expressions
-    countries.trim() === "" && router.push("/")
-  }, [countries])
-
   return (
-    <ul>
-      {data.map(({ name, capital }) => (
-        <li key={name}>
-          <p>{name}</p>
-          <p>{capital}</p>
-        </li>
-      ))}
-    </ul>
+    <S.CountryMain>
+      <S.CountryUl>
+        {data.map(({ name, capital, region, population, flag }) => (
+          <CardCountry
+            key={name}
+            name={name}
+            capital={capital}
+            region={region}
+            population={population}
+            flag={flag}
+          />
+        ))}
+      </S.CountryUl>
+    </S.CountryMain>
   )
 }
 
@@ -34,7 +34,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
     `https://restcountries.com/v2/name/bra?fields=name,capital`
   )
   const data = await response.json()
-
   const paths = data?.map(item => ({ params: { country: item.name } }))
 
   return {
@@ -47,7 +46,7 @@ export const getStaticProps: GetStaticProps = async context => {
   const { country } = context.params
 
   const response = await fetch(
-    `https://restcountries.com/v2/name/${country}?fields=name,capital`
+    `https://restcountries.com/v2/name/${country}?fields=name,capital,region,population,flag`
   )
   const data = await response.json()
 
