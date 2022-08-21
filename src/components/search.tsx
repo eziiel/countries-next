@@ -9,6 +9,7 @@ function Search() {
 
   const handleCountry = (value: string) => {
     setCountries(value)
+    if (value.length === 0) router.push("/")
   }
 
   const handleForm = (e: React.FormEvent) => {
