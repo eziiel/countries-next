@@ -1,10 +1,10 @@
-const theme = {
+export default {
+  title: "dark",
+
   colors: {
     background: "#07020D",
-    text: "#e1e1e6",
+    text: "#fcfcfc",
     primary: "#004BA8",
     second: "#083D77",
   },
 }
-
-export default theme

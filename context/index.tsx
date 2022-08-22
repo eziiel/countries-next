@@ -1,8 +1,8 @@
 import React, { ReactNode } from "react"
 
 type PropsInitial = {
-  themeStatus: boolean,
-  setThemeStatus: (newState: boolean) => void,
+  themeStatus: string,
+  setThemeStatus: (newState: string) => void,
   countries: string,
   setCountries: (newState: string) => void,
   region: string,
@@ -11,7 +11,7 @@ type PropsInitial = {
 }
 
 const initial = {
-  themeStatus: false,
+  themeStatus: "theme",
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   setThemeStatus: () => {},
   countries: "",

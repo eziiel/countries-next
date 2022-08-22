@@ -1,5 +1,4 @@
 import { createGlobalStyle } from "styled-components"
-import theme from "./theme"
 
 function pixelsToRem(...values: Array<number>) {
   // eslint-disable-next-line no-return-assign, no-param-reassign
@@ -15,8 +14,8 @@ export default createGlobalStyle`
   }
 
   body{
-    background: ${() => theme.colors.background};
-    color: ${() => theme.colors.text};
+    background: ${props => props.theme.colors.background};
+    color: ${props => props.theme.colors.text};
     font: 400 16px "Encode Sans", sans-serif;
   }
   :root{
@@ -31,6 +30,9 @@ export default createGlobalStyle`
   16
 )} 'Abel', sans-serif;
     --title:normal 600 ${pixelsToRem(24)}/${pixelsToRem(20)} 'Abel', sans-serif;
+    --title2:normal 600 ${pixelsToRem(22)}/${pixelsToRem(
+  20
+)} 'Abel', sans-serif;
 
 
 
