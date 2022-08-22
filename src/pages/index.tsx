@@ -25,7 +25,7 @@ function Countries({ data }) {
 
 export const getStaticProps: GetStaticProps = async () => {
   const url =
-    "https://restcountries.com/v2/name/bra?fields=name,capital,region,population,flag"
+    "https://restcountries.com/v2/name/br?fields=name,capital,region,population,flag"
   const response = await fetch(url)
   const data = await response.json()
 

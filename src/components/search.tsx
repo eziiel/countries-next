@@ -22,11 +22,12 @@ function Search() {
     }
     const regexp = /[a-z]/gi
     const res = countries.match(regexp)
-    setCountries(res.join("").trim())
+    const resCountry = res.join("").trim()
+    setCountries(resCountry)
     // eslint-disable-next-line no-unused-expressions
     router.query
-      ? router.push(`/countriesInfo/${countries}`)
-      : (router.query.country = countries)
+      ? router.push(`/name/${resCountry}`)
+      : (router.query.country = resCountry)
   }
 
   return (

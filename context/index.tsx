@@ -1,56 +1,63 @@
-import React, { ReactNode } from "react";
-
+import React, { ReactNode } from "react"
 
 type PropsInitial = {
-  countriesInitial : string[];
-  countries : string;
-  setCountries : (newState:string) => void;
-  region:string;
-  setRegion: (newState:string) => void;
-  regions:string[];
+  theme: boolean,
+  setTheme: (newState: boolean) => void,
+  countries: string,
+  setCountries: (newState: string) => void,
+  region: string,
+  setRegion: (newState: string) => void,
+  regions: string[],
 }
 
 const initial = {
-  countriesInitial : ["brazil","germany","albania","algeria","iceland","japan","denmark","jamaica"],
-  countries : '',
-  setCountries : () => {},
-  region:"filter by region",
+  theme: false,
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  setTheme: () => {},
+  countries: "",
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  setCountries: () => {},
+  region: "filter by region",
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   setRegion: () => {},
-  regions : ["filter by region", "Africa", "America","Asia", "Europe","Oceania"]
+  regions: [
+    "filter by region",
+    "Africa",
+    "America",
+    "Asia",
+    "Europe",
+    "Oceania",
+  ],
 }
 
 type PropsChildren = {
-  children:ReactNode
+  children: ReactNode,
 }
-
 
 const ContextData = React.createContext<PropsInitial>(initial)
 
-const ContextProvider = ({children}:PropsChildren) => {
-  const [countries,setCountries] = React.useState(initial.countries)
-  const [region,setRegion] = React.useState(initial.region)
-  const regions = initial.regions
-  const countriesInitial = initial.countriesInitial
+function ContextProvider({ children }: PropsChildren) {
+  const [theme, setTheme] = React.useState(initial.theme)
+  const [countries, setCountries] = React.useState(initial.countries)
+  const [region, setRegion] = React.useState(initial.region)
+  const { regions } = initial
 
-
-  const data = {
-    countries,
-    setCountries,
-    region,
-    setRegion,
-    regions,
-    countriesInitial,
-  }
   return (
-    <ContextData.Provider value={data}>
+    <ContextData.Provider
+      // eslint-disable-next-line react/jsx-no-constructed-context-values
+      value={{
+        theme,
+        setTheme,
+        countries,
+        setCountries,
+        region,
+        setRegion,
+        regions,
+      }}
+    >
       {children}
     </ContextData.Provider>
   )
 }
 
-
-
-export{
-  ContextData,
-  ContextProvider,
-}
+export { ContextData, ContextProvider }
