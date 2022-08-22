@@ -27,9 +27,15 @@ const Logo = styled.a`
   cursor: pointer;
 `
 
-const Theme = styled.button`
-  font: var(--font2);
-  cursor: pointer;
+const Theme = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 `
 
-export { SubHeader, Head, Logo, Theme }
+const ThemeSpan = styled.span`
+  font: var(--title2);
+`
+
+export { SubHeader, Head, Logo, Theme, ThemeSpan }
