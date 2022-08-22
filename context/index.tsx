@@ -1,8 +1,8 @@
 import React, { ReactNode } from "react"
 
 type PropsInitial = {
-  theme: boolean,
-  setTheme: (newState: boolean) => void,
+  themeStatus: boolean,
+  setThemeStatus: (newState: boolean) => void,
   countries: string,
   setCountries: (newState: string) => void,
   region: string,
@@ -11,9 +11,9 @@ type PropsInitial = {
 }
 
 const initial = {
-  theme: false,
+  themeStatus: false,
   // eslint-disable-next-line @typescript-eslint/no-empty-function
-  setTheme: () => {},
+  setThemeStatus: () => {},
   countries: "",
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   setCountries: () => {},
@@ -37,7 +37,7 @@ type PropsChildren = {
 const ContextData = React.createContext<PropsInitial>(initial)
 
 function ContextProvider({ children }: PropsChildren) {
-  const [theme, setTheme] = React.useState(initial.theme)
+  const [themeStatus, setThemeStatus] = React.useState(initial.themeStatus)
   const [countries, setCountries] = React.useState(initial.countries)
   const [region, setRegion] = React.useState(initial.region)
   const { regions } = initial
@@ -46,8 +46,8 @@ function ContextProvider({ children }: PropsChildren) {
     <ContextData.Provider
       // eslint-disable-next-line react/jsx-no-constructed-context-values
       value={{
-        theme,
-        setTheme,
+        themeStatus,
+        setThemeStatus,
         countries,
         setCountries,
         region,

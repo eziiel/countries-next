@@ -15,7 +15,7 @@ export default createGlobalStyle`
   }
 
   body{
-    background: ${() => theme.colors.third};
+    background: ${() => theme.colors.background};
     color: ${() => theme.colors.text};
     font: 400 16px "Encode Sans", sans-serif;
   }
