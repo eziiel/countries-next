@@ -2,6 +2,7 @@ import { useRouter } from "next/router"
 import React from "react"
 import { ContextData } from "../../context"
 import * as S from "../styles/components/search"
+import CheckedRegion from "./checkedRegion"
 
 function Search() {
   const router = useRouter()
@@ -39,6 +40,7 @@ function Search() {
             onChange={value => handleCountry(value.target.value)}
           />
         </S.FormCountry>
+        <CheckedRegion />
       </S.SubSection>
     </S.Section>
   )

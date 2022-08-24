@@ -7,7 +7,7 @@ type PropsInitial = {
   setCountries: (newState: string) => void,
   region: string,
   setRegion: (newState: string) => void,
-  regions: string[],
+  regions: (string | string[])[],
 }
 
 const initial = {
@@ -22,11 +22,7 @@ const initial = {
   setRegion: () => {},
   regions: [
     "filter by region",
-    "Africa",
-    "America",
-    "Asia",
-    "Europe",
-    "Oceania",
+    ["Africa", "America", "Asia", "Europe", "Oceania"],
   ],
 }
 
