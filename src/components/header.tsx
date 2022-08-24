@@ -10,6 +10,7 @@ interface Props {
 }
 function Header({ toggleTheme }: Props) {
   const { colors, title } = React.useContext(ThemeContext)
+
   return (
     <S.Head>
       <S.SubHeader>

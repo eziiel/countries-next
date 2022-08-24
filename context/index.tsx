@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
 import React, { ReactNode } from "react"
 
 type PropsInitial = {
@@ -12,13 +13,10 @@ type PropsInitial = {
 
 const initial = {
   themeStatus: "theme",
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
   setThemeStatus: () => {},
   countries: "",
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
   setCountries: () => {},
   region: "filter by region",
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
   setRegion: () => {},
   regions: [
     "filter by region",

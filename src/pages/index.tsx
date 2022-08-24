@@ -2,8 +2,15 @@ import React from "react"
 import { GetStaticProps } from "next"
 import * as S from "../styles/pages/home"
 import CardCountry from "../components/country"
+import { ContextData } from "../../context"
 
 function Countries({ data }) {
+  const { setRegion, regions } = React.useContext(ContextData)
+
+  React.useEffect(() => {
+    // eslint-disable-next-line no-unused-expressions
+    typeof regions[0] === "string" && setRegion(regions[0])
+  }, [])
   return (
     // eslint-disable-next-line react/jsx-filename-extension
     <S.HomeMain>
