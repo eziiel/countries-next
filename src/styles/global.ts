@@ -38,7 +38,7 @@ export default createGlobalStyle`
 
 
     //colors
-    --color-text:#222;
+    --color-text:#333;
     //grey
     --grey-BG:#f8f8f8;
     --grey:#E7E7E7;

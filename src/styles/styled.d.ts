@@ -11,6 +11,7 @@ declare module "styled-components" {
       text: string,
       primary: string,
       second: string,
+      card:string,
     },
   }
 }

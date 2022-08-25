@@ -20,6 +20,7 @@ const Card = styled.li`
   flex-direction: column;
   border-radius: 8px 8px;
   cursor: pointer;
+  background: ${props => props.theme.colors.card};
 `
 
 const FlagCountry =
