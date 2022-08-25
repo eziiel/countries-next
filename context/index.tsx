@@ -2,8 +2,8 @@
 import React, { ReactNode } from "react"
 
 type PropsInitial = {
-  themeStatus: string,
-  setThemeStatus: (newState: string) => void,
+  themeStatus: boolean,
+  setThemeStatus: (newState: boolean) => void,
   countries: string,
   setCountries: (newState: string) => void,
   region: string,
@@ -12,7 +12,7 @@ type PropsInitial = {
 }
 
 const initial = {
-  themeStatus: "theme",
+  themeStatus: true,
   setThemeStatus: () => {},
   countries: "",
   setCountries: () => {},
