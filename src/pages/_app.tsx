@@ -8,16 +8,19 @@ import Search from "../components/search"
 import { ContextProvider } from "../../context"
 import light from "../styles/theme/light"
 import dark from "../styles/theme/dark"
+import usePersisted from "../utils/usePersisted"
 
 // eslint-disable-next-line react/function-component-definition
 const MyApp: React.FC = ({ Component, pageProps }: AppProps) => {
-  const [theme, setTheme] = React.useState(light)
+  const [theme, setTheme] = usePersisted("theme", "dark")
 
   const handleTheme = () => {
-    setTheme(theme === light ? dark : light)
+    // eslint-disable-next-line no-shadow, no-return-assign, no-param-reassign
+    setTheme(theme => (theme = theme === "light" ? "dark" : "light"))
   }
+
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme === "light" ? dark : light}>
       <ContextProvider>
         <Global />
         <Header toggleTheme={handleTheme} />
