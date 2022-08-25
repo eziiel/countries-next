@@ -10,23 +10,28 @@ interface Props {
   toggleTheme(): void;
 }
 function Header({ toggleTheme }: Props) {
+  const [persist, setPersist] = React.useState(false)
   const { themeStatus, setThemeStatus } = React.useContext(ContextData)
-  const { colors } = React.useContext(ThemeContext)
+  const { colors, title } = React.useContext(ThemeContext)
 
   const handleChangeTheme = () => {
     setThemeStatus(!themeStatus)
   }
+
+  React.useEffect(() => {
+    setPersist(localStorage.theme === "dark" || title === "dark")
+  }, [themeStatus])
+
   return (
     <S.Head>
       <S.SubHeader>
         <Link href="/">
           <S.Logo>Countries</S.Logo>
         </Link>
-        {/* <S.Theme onClick={toggleTheme}>theme</S.Theme> */}
         <S.Theme onClick={handleChangeTheme}>
           <Switch
             onChange={toggleTheme}
-            checked={!themeStatus}
+            checked={persist}
             checkedIcon={false}
             uncheckedIcon={false}
             height={10}

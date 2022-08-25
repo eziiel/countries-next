@@ -5,7 +5,7 @@ function usePersisted(key: string, initialState: string) {
   const [state, setState] = React.useState(() => {
     if (typeof window === "object") {
       const storage = localStorage.getItem(key)
-      return JSON.parse(storage) || initialState
+      return storage ? JSON.parse(storage) : initialState
     }
   })
 

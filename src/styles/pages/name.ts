@@ -16,5 +16,7 @@ const CountryUl = styled.ul`
   flex-wrap: wrap;
   gap: 1rem;
 `
-
-export { CountryMain, CountryUl }
+const NoFound = styled.span`
+  padding: 5rem;
+`
+export { CountryMain, CountryUl, NoFound }

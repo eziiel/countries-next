@@ -16,7 +16,7 @@ const MyApp: React.FC = ({ Component, pageProps }: AppProps) => {
 
   const handleTheme = () => {
     // eslint-disable-next-line no-shadow, no-return-assign, no-param-reassign
-    setTheme(theme => (theme = theme === "light" ? "dark" : "light"))
+    setTheme(theme === "light" ? "dark" : "light")
   }
 
   return (

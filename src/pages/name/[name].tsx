@@ -25,18 +25,22 @@ export default function Name({ data }) {
 
   return (
     <S.CountryMain>
-      <S.CountryUl>
-        {data.map(({ name, capital, region, population, flag }) => (
-          <CardCountry
-            key={name}
-            name={name}
-            capital={capital}
-            region={region}
-            population={population}
-            flag={flag}
-          />
-        ))}
-      </S.CountryUl>
+      {data.name ? (
+        <S.CountryUl>
+          {data.map(({ name, capital, region, population, flag }) => (
+            <CardCountry
+              key={name}
+              name={name}
+              capital={capital}
+              region={region}
+              population={population}
+              flag={flag}
+            />
+          ))}
+        </S.CountryUl>
+      ) : (
+        <S.NoFound>Country no Found</S.NoFound>
+      )}
     </S.CountryMain>
   )
 }
@@ -57,14 +61,21 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async context => {
   const { name } = context.params
 
-  const response = await fetch(
-    `https://restcountries.com/v2/name/${name}?fields=name,capital,region,population,flag`
-  )
-  const data = await response.json()
-
-  return {
-    props: {
-      data,
-    },
+  try {
+    const response = await fetch(
+      `https://restcountries.com/v2/name/${name}?fields=name,capital,region,population,flag`
+    )
+    const data = await response.json()
+    return {
+      props: {
+        data,
+      },
+    }
+  } catch (error) {
+    return {
+      props: {
+        data: error,
+      },
+    }
   }
 }
