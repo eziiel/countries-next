@@ -10,10 +10,6 @@ export default function Name({ data }) {
   const router = useRouter()
   const { name: nameCountry } = router.query
 
-  if (router.isFallback) {
-    return <h1>carregando...</h1>
-  }
-
   React.useEffect(
     (): void =>
       // eslint-disable-next-line no-unused-expressions
@@ -23,9 +19,13 @@ export default function Name({ data }) {
     []
   )
 
+  if (router.isFallback) {
+    return <h1>carregando...</h1>
+  }
+
   return (
     <S.CountryMain>
-      {data.name ? (
+      {Array.isArray(data) ? (
         <S.CountryUl>
           {data.map(({ name, capital, region, population, flag }) => (
             <CardCountry
