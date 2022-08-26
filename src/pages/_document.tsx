@@ -47,16 +47,26 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Encode+Sans:400,
           500,700"
           />
+          <link rel="icon" href="favicon.ico" />
+
+          <meta content="Countries" property="og:title" />
           <meta
             content="Busca de paises nome de paises regiao dos paises do mundo"
-            name="descripton"
+            name="description"
           />
           <meta
             content="Busca de paises nome de paises regiao dos paises do mundo"
             property="og:description"
           />
-          <meta content="Countries" property="og:title" />
-          <link rel="icon" href="favicon.ico" />
+          <meta property="og:type" content="country" />
+          <meta
+            property="og:image"
+            content="http://localhost:3000/banner.png"
+          />
+          <meta
+            property="og:url"
+            content="https://countries-next-rho.vercel.app/"
+          />
         </Head>
 
         <body>

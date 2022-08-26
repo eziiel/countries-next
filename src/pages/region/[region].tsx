@@ -26,7 +26,7 @@ function Region({ res }) {
               capital={capital}
               region={region}
               population={population}
-              flag={flags.svg}
+              flag={flags.png}
             />
           ))}
         </S.RegionUl>
@@ -69,6 +69,7 @@ export const getStaticProps: GetStaticProps = async context => {
   return {
     props: {
       res,
+      revalidate: 3600,
     },
   }
 }

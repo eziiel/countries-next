@@ -19,14 +19,14 @@ function Countries({ data }) {
       </Head>
       <S.HomeMain>
         <S.HomeUl>
-          {data.map(({ name, capital, region, population, flag }) => (
+          {data.map(({ name, capital, region, population, flags }) => (
             <CardCountry
               key={name}
               name={name}
               capital={capital}
               region={region}
               population={population}
-              flag={flag}
+              flag={flags.png}
             />
           ))}
         </S.HomeUl>
@@ -37,7 +37,7 @@ function Countries({ data }) {
 
 export const getStaticProps: GetStaticProps = async () => {
   const url =
-    "https://restcountries.com/v2/name/br?fields=name,capital,region,population,flag"
+    "https://restcountries.com/v2/name/br?fields=name,capital,region,population,flags"
   const response = await fetch(url)
   const data = await response.json()
 

@@ -32,14 +32,14 @@ export default function Name({ data }) {
       <S.CountryMain>
         {Array.isArray(data) ? (
           <S.CountryUl>
-            {data.map(({ name, capital, region, population, flag }) => (
+            {data.map(({ name, capital, region, population, flags }) => (
               <CardCountry
                 key={name}
                 name={name}
                 capital={capital}
                 region={region}
                 population={population}
-                flag={flag}
+                flag={flags.png}
               />
             ))}
           </S.CountryUl>
@@ -69,7 +69,7 @@ export const getStaticProps: GetStaticProps = async context => {
 
   try {
     const response = await fetch(
-      `https://restcountries.com/v2/name/${name}?fields=name,capital,region,population,flag`
+      `https://restcountries.com/v2/name/${name}?fields=name,capital,region,population,flags`
     )
     const data = await response.json()
     return {
@@ -81,6 +81,7 @@ export const getStaticProps: GetStaticProps = async context => {
     return {
       props: {
         data: error,
+        revalidate: 3600,
       },
     }
   }
