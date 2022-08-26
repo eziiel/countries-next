@@ -56,7 +56,7 @@ const Ul =
   border-radius:5px;
   background: var(--grey);
   border: 2px solid var(--grey);
-  bottom:-95%;
+  bottom:-70%;
   transform: translateX(40px);
   transition: .3s ease-in;
   opacity: 0;
