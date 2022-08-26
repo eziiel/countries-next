@@ -47,6 +47,15 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Encode+Sans:400,
           500,700"
           />
+          <meta
+            content="Busca de paises nome de paises regiao dos paises do mundo"
+            name="descripton"
+          />
+          <meta
+            content="Busca de paises nome de paises regiao dos paises do mundo"
+            property="og:description"
+          />
+          <meta content="Countries" property="og:title" />
           <link rel="icon" href="favicon.ico" />
         </Head>
 

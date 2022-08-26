@@ -1,4 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from "next"
+import Head from "next/head"
 import { useRouter } from "next/router"
 import React from "react"
 import CardCountry from "../../components/country"
@@ -12,20 +13,25 @@ function Region({ res }) {
   }
 
   return (
-    <S.RegionMain>
-      <S.RegionUl>
-        {res.map(({ name, capital, region, population, flags }) => (
-          <CardCountry
-            key={name.common}
-            name={name.common}
-            capital={capital}
-            region={region}
-            population={population}
-            flag={flags.svg}
-          />
-        ))}
-      </S.RegionUl>
-    </S.RegionMain>
+    <>
+      <Head>
+        <title>Countries - region</title>
+      </Head>
+      <S.RegionMain>
+        <S.RegionUl>
+          {res.map(({ name, capital, region, population, flags }) => (
+            <CardCountry
+              key={name.common}
+              name={name.common}
+              capital={capital}
+              region={region}
+              population={population}
+              flag={flags.svg}
+            />
+          ))}
+        </S.RegionUl>
+      </S.RegionMain>
+    </>
   )
 }
 

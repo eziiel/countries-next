@@ -60,6 +60,7 @@ const Ul =
   transform: translateX(40px);
   transition: .3s ease-in;
   opacity: 0;
+  z-index: 1;
 
   ${props =>
     props.statusRegion &&

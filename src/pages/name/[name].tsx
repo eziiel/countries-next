@@ -1,4 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from "next"
+import Head from "next/head"
 import { useRouter } from "next/router"
 import React from "react"
 import { ContextData } from "../../../context"
@@ -24,24 +25,29 @@ export default function Name({ data }) {
   }
 
   return (
-    <S.CountryMain>
-      {Array.isArray(data) ? (
-        <S.CountryUl>
-          {data.map(({ name, capital, region, population, flag }) => (
-            <CardCountry
-              key={name}
-              name={name}
-              capital={capital}
-              region={region}
-              population={population}
-              flag={flag}
-            />
-          ))}
-        </S.CountryUl>
-      ) : (
-        <S.NoFound>Country no Found</S.NoFound>
-      )}
-    </S.CountryMain>
+    <>
+      <Head>
+        <title>Countries - search</title>
+      </Head>
+      <S.CountryMain>
+        {Array.isArray(data) ? (
+          <S.CountryUl>
+            {data.map(({ name, capital, region, population, flag }) => (
+              <CardCountry
+                key={name}
+                name={name}
+                capital={capital}
+                region={region}
+                population={population}
+                flag={flag}
+              />
+            ))}
+          </S.CountryUl>
+        ) : (
+          <S.NoFound>Country no Found</S.NoFound>
+        )}
+      </S.CountryMain>
+    </>
   )
 }
 

@@ -18,10 +18,7 @@ const initial = {
   setCountries: () => {},
   region: "filter by region",
   setRegion: () => {},
-  regions: [
-    "filter by region",
-    ["Africa", "America", "Asia", "Europe", "Oceania"],
-  ],
+  regions: ["filter by region", ["Africa", "America", "Europe", "Oceania"]],
 }
 
 type PropsChildren = {
