@@ -25,6 +25,9 @@ export default createGlobalStyle`
 )} 'Dancing Script', cursive, sans-serif;
     --font2:normal 700 ${pixelsToRem(32)}/${pixelsToRem(24)} 'Abel', sans-serif;
     //small
+    --small0:normal 400 ${pixelsToRem(14)}/${pixelsToRem(
+  12
+)} 'Abel', sans-serif;
     --small:normal 400 ${pixelsToRem(16)}/${pixelsToRem(16)} 'Abel', sans-serif;
     --small2:normal 600 ${pixelsToRem(16)}/${pixelsToRem(
   16

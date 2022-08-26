@@ -11,7 +11,7 @@ interface PropsList {
 }
 
 const Nav = styled.nav`
-  width: 200px;
+  width: 250px;
   height: 100%;
   position: relative;
   display: flex;
@@ -23,6 +23,7 @@ const Checked =
   styled.div <
   PropsList >
   `
+  display:flex;
   width: 100%;
   height: 39px;
   padding: ${pixelsToRem(8)};
@@ -32,6 +33,12 @@ const Checked =
   border: 2px solid var(--grey);
   color: #000;
   cursor: pointer;
+
+  @media (max-width: 1150px) {
+    font: var(--small0);
+    padding: .5rem;
+    align-items: center;
+  }
 
   ${props =>
     props.statusRegion &&
@@ -50,7 +57,7 @@ const Ul =
   background: var(--grey);
   border: 2px solid var(--grey);
   bottom:-95%;
-  transform: translateX(60px);
+  transform: translateX(40px);
   transition: .3s ease-in;
   opacity: 0;
 

@@ -20,7 +20,10 @@ const Card = styled.li`
   flex-direction: column;
   border-radius: 8px 8px;
   cursor: pointer;
-  background: ${props => props.theme.colors.card};
+
+  @media (max-width: 1150px) {
+    min-width: 250px;
+  }
 `
 
 const FlagCountry =
@@ -37,6 +40,10 @@ const FlagCountry =
   border-radius: 8px 8px 0 0;
   width: 100%;
   min-height: 200px;
+
+  @media (max-width: 1400px) {
+    min-height: 200px;
+  }
 `
 
 const InfoData = styled.ul`
@@ -63,16 +70,32 @@ const Info =
         text-align: center;
         padding: 0.5rem 0;
         letter-spacing: 1px;
+
+        @media (max-width: 1400px) {
+          font: var(--small2);
+        }
       }
-    `}
+    `};
+
+  @media (max-width: 1400px) {
+    font: var(--small0);
+  }
 `
 
 const SpanInfo = styled.span`
   font: var(--small2);
+
+  @media (max-width: 1400px) {
+    font: var(--small0);
+  }
 `
 
 const SpanAnswer = styled.span`
   font: var(--small);
+
+  @media (max-width: 1400px) {
+    font: var(--small0);
+  }
 `
 
 export { Card, FlagCountry, InfoData, Info, SpanInfo, SpanAnswer }
