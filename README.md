@@ -25,6 +25,5 @@ This project was developed using the following technologies:
 <br>
 
 <p align=center>have a fun</p>
-<p align=center>🚧🔧project under construction .🔧🚧</p>
 
 Made with 💜 by [eziiel](https://github.com/eziiel) 🙌🚀
