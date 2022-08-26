@@ -1,3 +1,4 @@
+import Image from "next/image"
 import React from "react"
 // import Image from "next/image"
 import * as S from "../styles/components/country"
@@ -13,7 +14,7 @@ interface Props {
 function CardCountry({ name, capital, flag, population, region }: Props) {
   return (
     <S.Card>
-      {/* <Image
+      <Image
         style={{
           borderRadius: "10px 10px 0 0",
         }}
@@ -22,8 +23,8 @@ function CardCountry({ name, capital, flag, population, region }: Props) {
         width={315}
         priority
         height={220}
-      /> */}
-      <S.FlagCountry flag={flag} />
+      />
+      {/* <S.FlagCountry flag={flag} /> */}
       <S.InfoData>
         <S.Info name={name}>
           <S.SpanAnswer>{name}</S.SpanAnswer>
