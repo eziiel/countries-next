@@ -15,6 +15,10 @@ const CountryUl = styled.ul`
   justify-content: center;
   flex-wrap: wrap;
   gap: 1rem;
+
+  @media (max-width: 1150px) {
+    min-height: 100px;
+  }
 `
 const NoFound = styled.span`
   padding: 5rem;

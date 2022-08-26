@@ -2,11 +2,16 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-
 }
+
+module.exports = nextConfig
 
 module.exports = {
   images: {
     domains: ['flagcdn.com'],
   },
+  compiler: {
+    // Enables the styled-components SWC transform
+    styledComponents: true
+  }
 }

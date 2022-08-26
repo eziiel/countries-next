@@ -41,7 +41,7 @@ function Header({ toggleTheme }: Props) {
             onColor={colors.primary}
             offHandleColor={colors.primary}
           />
-          <S.ThemeSpan>theme</S.ThemeSpan>
+          {/* <S.ThemeSpan>theme</S.ThemeSpan> */}
         </S.Theme>
       </S.SubHeader>
     </S.Head>

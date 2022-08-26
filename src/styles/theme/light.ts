@@ -6,6 +6,6 @@ export default {
     text: "#07020D",
     primary: "#004BA8",
     second: "#083D77",
-    card: "#f8f8f8",
+    card: "#f2f0f0",
   },
 }

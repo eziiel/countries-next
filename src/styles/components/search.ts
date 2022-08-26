@@ -20,6 +20,7 @@ const SubSection = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: ${pixelsToRem(22)};
+  gap: ${pixelsToRem(32)};
 `
 
 const SearchName = styled.input.attrs({
