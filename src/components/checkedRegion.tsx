@@ -41,7 +41,6 @@ function CheckedRegion() {
               onClick={() => handleRegion(item)}
             >
               {statusRegion && <Link href={`/region/${item}`}>{item}</Link>}
-              {/* {item} */}
             </S.Li>
           ))}
       </S.Ul>
