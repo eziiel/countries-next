@@ -16,7 +16,7 @@
 
 ```bash
 
-  git clone https://github.com/eziiel/next-setup-default.git
+  git clone https://github.com/eziiel/countries-next.git
 
 ```
 
